@@ -105,7 +105,7 @@ class PdfCommand extends HtmlCommand
         file_put_contents($pdfSource, $rendered);
 
         // command that will be invoked to convert html to pdf
-        $cmd = "wkhtmltopdf $pdfargs $pdfSource $destFilename";
+        $cmd = "wkhtmltopdf --enable-local-file-access $pdfargs $pdfSource $destFilename";
 
         // Process the document with wkhtmltopdf
         if(!$htmlonly)
